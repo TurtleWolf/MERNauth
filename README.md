@@ -17,32 +17,9 @@
 
 ```bash
  git init
-
  git add .
  git commit -m "original 31 files"
- git status
  npx express-generator --view=ejs --git .
-
- git add .
- git commit -m "8 additional files from running express-generator"
- git status
-
- npm i bcryptjs colors cookie-parser cors dotenv express express-fileupload express-mongo-sanitize express-rate-limit helmet hpp jsonwebtoken mongoose morgan node-geocoder nodemailer slugify xss-clean
-
- npm init
- npm install
-```
-
-## 2. Initizialize a git repo
-
-```bash
-git init
-```
-
-## 1. create express scaffolding with **`ejs views`**, **`.gitignore`**, and **`app.js`**
-
-```bash
-npx express-generator -e --git .
 ```
 
 ```bash
@@ -71,20 +48,26 @@ destination is not empty, continue? [y/N] y
 
    run the app:
      $ DEBUG=mernatuh-master:* npm start
+```
 
+```bash
         new file:   .gitignore
         new file:   package.json
         new file:   public/stylesheets/style.css
         new file:   routes/index.js
+        new file:   routes/users.js
         new file:   views/error.ejs
         new file:   views/index.ejs
-
 ```
 
-## 2. reject 4 overlapping overwries
+## 2. Discard Changes to modified files **_`app.js`_** & **_`bin/www`_**
 
 ```bash
-git init
+ git add .
+ git commit -m "7 additional files from running express-generator"
+
+# API Express Mastery
+npm i bcryptjs colors cookie-parser cors debug dotenv ejs express express-fileupload express-mongo-sanitize express-rate-limit helmet hpp http-errors jsonwebtoken mongoose morgan node-geocoder nodemailer slugify xss-clean
 ```
 
 ## 3. edit the default `package.json` file by Initizializing a NodeJS project
