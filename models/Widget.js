@@ -1,6 +1,7 @@
 const mongoose = require('mongoose');
+const UserSchema = require('../models/User.js');
 // const slugify = require('slugify');
-// const geocoder = require('../utils/geocoder');
+// const geocoder = require('../utils/geoCoder');
 
 const WidgetSchema = new mongoose.Schema({
     name: {
@@ -88,11 +89,11 @@ const WidgetSchema = new mongoose.Schema({
 }
 );
 
-// Cascade delete Widgets when a User is deleted
-UserSchema.pre('remove', async function (next) {
-    console.log(`Widgets being removed per this user ${this._id}`);
-    await this.model('Widget').deleteMany({ user: this._id });
-    next();
-});
+// // Cascade delete Widgets when a User is deleted
+// UserSchema.pre('remove', async function (next) {
+//     console.log(`Widgets being removed per this user ${this._id}`);
+//     await this.model('Widget').deleteMany({ user: this._id });
+//     next();
+// });
 
 module.exports = mongoose.model('Widget', WidgetSchema);

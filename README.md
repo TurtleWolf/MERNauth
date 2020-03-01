@@ -18,7 +18,7 @@
 ```bash
  git init
  git add .
- git commit -m "original 31 files"
+ git commit -m "original 33 files"
  npx express-generator --view=ejs --git .
 ```
 
@@ -68,12 +68,6 @@ destination is not empty, continue? [y/N] y
 
 # API Express Mastery
 npm i bcryptjs colors cookie-parser cors debug dotenv ejs express express-fileupload express-mongo-sanitize express-rate-limit helmet hpp http-errors jsonwebtoken mongoose morgan node-geocoder nodemailer slugify xss-clean
-```
-
-## 3. edit the default `package.json` file by Initizializing a NodeJS project
-
-```bash
-npm init
 ```
 
 ## 5. Install the **API** _**`dependencies`**_ (by adding them to the **_`package.json`_** file)
@@ -128,6 +122,12 @@ npm i -D nodemon concurrently
     "dev": "nodemon ./bin/www",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+```
+
+## 3. edit the default `package.json` file by Initizializing a NodeJS project
+
+```bash
+npm init
 ```
 
 ## Configure `Enviromental Variables`, beginning with **_`Enviroment`_** and **_`Port`_**
