@@ -1189,13 +1189,62 @@ code;
 
 ---
 
+## **_filter_**
+
+### by **_`req.query.params;`_**
+
+### **_{{url}}/api/v1/widgets`?who= &what= &when=`_**
+
+### **_`[lt]`_** **_`[lte]`_** **_`[eq]`_** **_`[gte]`_** **_`[gt]`_** **_`[in]`_**
+
+### **_{{url}}/api/v1/widgets`?when[lte]=3`_**
+
+## **_select_**
+
+### **_`select= ,`_**
+
+### **_{{url}}/api/v1/widgets`?select=who,why`_**
+
+## **_sort_**
+
+### **_`sort=`_**
+
+### **_{{url}}/api/v1/widgets`?sort=-who`_**
+
+## **_pagination_**
+
+### **_`limit=`_**
+
+### **_`page=`_**
+
+### **_{{url}}/api/v1/widgets`?page=2&limit=3`_**
+
+```js
+```
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
+---
+
 ---
 
 (then I addded a copy of Brad's notes at the bottom of the README.md)
 
 ---
 
-## DevConnector 2.0 (then I addded a copy of Brad's notes at the bottom of the README.md)
+## DevConnector 2.0
 
 > Social network for developers
 

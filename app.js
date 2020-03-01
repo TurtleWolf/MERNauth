@@ -25,6 +25,7 @@ const usersRouter = require('./routes/users');
 const userzRouter = require('./routes/userz');
 const authRouter = require('./routes/auth');
 const widgetsRouter = require('./routes/widgets');
+const widgetzRouter = require('./routes/widgetz');
 
 const app = express();
 console.log(`Server listening in ${process.env.NODE_ENV} on port ${process.env.PORT}!`.yellow.bold);
@@ -66,8 +67,8 @@ app.use('/', indexRouter);
 app.use('/users', userzRouter);
 app.use('/api/v1/users', usersRouter);
 app.use('/api/v1/auth', authRouter);
-// app.use('/api/v1/widgets', widgetsRouter);
-app.use('/widgets', widgetsRouter);
+app.use('/api/v1/widgets', widgetsRouter);
+app.use('/widgets', widgetzRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
