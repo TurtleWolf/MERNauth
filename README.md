@@ -65,23 +65,20 @@ destination is not empty, continue? [y/N] y
 ```bash
  git add .
  git commit -m "7 additional files from running express-generator"
+```
 
+## 5. Install the **API** _**`dependencies`**_
+
+```bash
 # API Express Mastery
 npm i bcryptjs colors cookie-parser cors debug dotenv ejs express express-fileupload express-mongo-sanitize express-rate-limit helmet hpp http-errors jsonwebtoken mongoose morgan node-geocoder nodemailer slugify xss-clean
 ```
 
-## 5. Install the **API** _**`dependencies`**_ (by adding them to the **_`package.json`_** file)
-
-```bash
-# API Express Mastery
-npm i bcryptjs colors cookie-parser cors dotenv express express-fileupload express-mongo-sanitize express-rate-limit helmet hpp jsonwebtoken mongoose morgan node-geocoder nodemailer slugify xss-clean
-```
-
-## 4. Install the **MERN** _**`dependencies`**_ (by adding them to the **_`package.json`_** file)
+<!-- ## 4. Install the **MERN** _**`dependencies`**_
 
 ```bash
 npm i bcryptjs client config express express-validator gravatar jsonwebtoken mongoose normalize-url request
-```
+``` -->
 
 <!-- ```bash
 # API Express Mastery
@@ -106,7 +103,7 @@ slugify
 xss-clean
 ``` -->
 
-## 6. Install the _**`developement dependencies`**_ (by adding them to the _**`package.json`**_ file)
+## 6. Install the _**`developement dependencies`**_
 
 ```bash
 npm i -D nodemon concurrently

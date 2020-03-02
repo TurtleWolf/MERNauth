@@ -37,7 +37,7 @@ exports.createWidget = asyncHandler(async (req, res, next) => {
 // @desc    Reads all Widgets                 Rs
 // @route   GET /api/v1/widgets               Rs
 // @access  Public                            Rs
-exports.getWidgets = asyncHandler(async (req, res, next) => {
+exports.readWidgets = asyncHandler(async (req, res, next) => {
     // let widgetZ = await Widget.find();
     res.status(200).json(res.advancedResults);
     // res.status(200)
@@ -53,7 +53,7 @@ exports.getWidgets = asyncHandler(async (req, res, next) => {
 // @desc    Read a single Widget              R
 // @route   GET /api/v1/widgets/:id           R
 // @access  Public                            R
-exports.getWidget = asyncHandler(async (req, res, next) => {
+exports.readWidget = asyncHandler(async (req, res, next) => {
     let widgetZ = await Widget.find();
     const widget = await Widget.findById(req.params.id);
     // console.log(req.body);
