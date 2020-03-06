@@ -11,6 +11,7 @@ const mongoSanitize = require('express-mongo-sanitize');
 const path = require('path');
 const rateLimit = require('express-rate-limit');
 const xssCln = require('xss-clean');
+const cookieSession = require('cookie-session');
 
 //Load env vars
 dotenv.config({ path: './config/config.env' });
@@ -21,21 +22,35 @@ connectDB();
 
 //Router Files
 const indexRouter = require('./routes/index');
+const authRouter = require('./routes/auth');
 const usersRouter = require('./routes/users');
 const userzRouter = require('./routes/userz');
-const authRouter = require('./routes/auth');
+const profilesRouter = require('./routes/profiles');
+const postsRouter = require('./routes/posts');
 const widgetsRouter = require('./routes/widgets');
 const widgetzRouter = require('./routes/widgetz');
 
 const app = express();
+//after you declare app put this code:
+//session init
+app.use(cookieSession({
+  name: 'session',
+  keys: [`${process.env.COOKIE_SESSION_SALT}`],
+
+  // Cookie Options
+  maxAge: 24 * 60 * 60 * 1000 // 24 hours
+}));
+// console.log(`${process.env.COOKIE_SESSION_SALT}`.bgMagenta);
+
 console.log(`Server listening in ${process.env.NODE_ENV} on port ${process.env.PORT}!`.yellow.bold);
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
+// Init MiddleWare
 app.use(logger('dev'));
-app.use(express.json());
+app.use(express.json({ extended: false }));
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
@@ -64,11 +79,13 @@ app.use(cors());
 
 // App Mount Routers
 app.use('/', indexRouter);
+app.use('/api/v1/auth', authRouter);
 app.use('/users', usersRouter);
 app.use('/api/v1/users', userzRouter);
-app.use('/api/v1/auth', authRouter);
-app.use('/api/v1/widgets', widgetzRouter);
+app.use('/api/v1/profiles', profilesRouter);
+app.use('/api/v1/posts', postsRouter);
 app.use('/widgets', widgetsRouter);
+app.use('/api/v1/widgets', widgetzRouter);
 
 // catch 404 and forward to error handler
 app.use(function (req, res, next) {
